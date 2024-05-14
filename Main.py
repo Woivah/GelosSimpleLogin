@@ -132,20 +132,16 @@ class UserManager:
 
 # Create a UserManager instance
 user_manager = UserManager(FILE_NAME)
-
-# Main menu
 while True:
     print("\nWelcome to the Gelos Login System")
-    print("1. Register")
-    print("2. Login")
-    print("3. View all accounts")  # New option to view all accounts
-    print("4. Exit")
-
+    print("A. Register")
+    print("B. Login")
+    print("C. View all accounts")
+    print("D. Exit")
     choice = input("Select an option: ").upper()
-
-    if choice == "1":
+    if choice == "A":
         user_manager.register()
-    elif choice == "2":
+    elif choice == "B":
         logged_in, username = user_manager.login()
         if logged_in:
             if username.lower() == "admin":
@@ -176,14 +172,13 @@ while True:
                         break
                     else:
                         print("Invalid choice. Please select again.")
-    elif choice == "3":  # Option to view all accounts
+    elif choice == "C":
         user_manager.viewacc()
-    elif choice == "4":
+    elif choice == "D":
         print("Exiting in 2")
         time.sleep(1)
         print("Exiting in 1")
-        time.sleep(1)  # Adding a delay of 2 seconds before exiting
-        sys.exit()  # Exit the program
-
+        time.sleep(1)
+        sys.exit()
     else:
         print("Invalid choice. Please select again.")
